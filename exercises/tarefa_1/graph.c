@@ -47,3 +47,8 @@ bool print_info(GRAPH* G){
   }
   return true;
 }
+
+int number_of_vertexs(GRAPH* G) {
+  return G->num_vertex;
+}
+
