@@ -7,6 +7,7 @@ struct graph_{
   int** matrix;
 };
 
+
 GRAPH* MyGraph(int N){
   GRAPH *graph = (GRAPH*)malloc(sizeof(GRAPH));
   if(graph != NULL){
@@ -35,13 +36,14 @@ bool exist_edge(GRAPH* G, int v1, int v2){
     return false;
 }
 
-void print_info(GRAPH* G){
-  if(G != NULL){
-    for(int i=0; i<G->num_vertex; i++){
-        for(int j=0; j<G->num_vertex; j++){
-            printf("|%d|",G->matrix[i][j]);
-        }
-        printf("\n");
-      }
+bool print_info(GRAPH* G){
+  if(G == NULL) return false;
+
+  for(int i=0; i<G->num_vertex; i++){
+    for(int j=0; j<G->num_vertex; j++){
+        printf("|%d|",G->matrix[i][j]);
+    }
+    printf("\n");
   }
+  return true;
 }
