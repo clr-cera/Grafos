@@ -52,3 +52,7 @@ int number_of_vertexs(GRAPH* G) {
   return G->num_vertex;
 }
 
+int** adjacency_matrix(GRAPH* G) {
+  return G->matrix;
+}
+

@@ -4,9 +4,9 @@
 
 typedef struct graph_* Graph;
 
-//a 
+//a
 Graph MyGraph(int N);
-//b 
+//b
 bool exist_edge(Graph G, int v1, int v2);
 //c TODO
 int* get_adj_vertex(Graph G, int v); 
@@ -14,7 +14,7 @@ int* get_adj_vertex(Graph G, int v);
 bool remove_edge(Graph G, int v1, int v2);
 //e
 bool print_info(Graph G);
-//f TODO
+//f
 int number_of_vertexs(Graph G);
 //g TODO
 bool remove_graph(Graph G);
@@ -22,5 +22,5 @@ bool remove_graph(Graph G);
 bool add_edge(Graph G, int v1, int v2);
 //i TODO
 int remove_with_least_weight(Graph G);
-//j TODO
+//j
 int** adjacency_matrix(Graph G);
