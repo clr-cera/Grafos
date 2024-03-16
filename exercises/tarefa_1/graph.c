@@ -10,14 +10,20 @@ struct graph_ {
 
 GRAPH *MyGraph(int N) {
   GRAPH *graph = (GRAPH *) malloc(sizeof(GRAPH));
-  if (graph == NULL) return NULL;
+  if (graph == NULL || N < 1) return NULL;
   
   graph->num_vertex = N;
 
   // Aloca matrix
   graph->matrix = (int **) malloc(N * sizeof(int *));
+  if (graph->matrix == NULL) {free(graph); return NULL;}
+
+  //Aloca linhas da matrix
   for (int i = 0; i < N; i++) {
     graph->matrix[i] = (int *)malloc(N * sizeof(int));
+    if(graph->matrix[i] == NULL) {
+      remove_graph(graph); return NULL;
+    }
   }
 
  // Reseta matrix 
