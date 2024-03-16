@@ -34,7 +34,7 @@ bool exist_edge(GRAPH *G, int v1, int v2) {
   if (G == NULL) {
     return false;
   }
-  if ((v1 > G->num_vertex) || (v2 > G->num_vertex)) {
+  if ((v1 > G->num_vertex) || (v1 < 0) || (v2 > G->num_vertex)  || (v2 < 0)) {
     return false;
   }
   return (G->matrix[v1][v2] != -1);
