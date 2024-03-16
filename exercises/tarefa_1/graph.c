@@ -40,6 +40,15 @@ bool exist_edge(GRAPH *G, int v1, int v2) {
   return (G->matrix[v1][v2] != -1);
 }
 
+bool remove_edge(Graph G, int v1, int v2) {
+  if (G == NULL) {
+    return false;
+  }
+  
+  G->matrix[v1][v2] = G->matrix[v2][v1] = -1;
+  return true;
+}
+
 bool print_info(GRAPH *G) {
   if (G == NULL) {
     return false;

@@ -10,7 +10,7 @@ Graph MyGraph(int N);
 bool exist_edge(Graph G, int v1, int v2);
 // c
 int *get_adj_vertex(Graph G, int v);
-// d TODO
+// d 
 bool remove_edge(Graph G, int v1, int v2);
 // e
 bool print_info(Graph G);
