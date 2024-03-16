@@ -9,19 +9,24 @@ struct graph_ {
 };
 
 GRAPH *MyGraph(int N) {
-  GRAPH *graph = (GRAPH *)malloc(sizeof(GRAPH));
-  if (graph != NULL) {
-    graph->num_vertex = N;
-    graph->matrix = (int **)malloc(N * sizeof(int *));
-    for (int i = 0; i < N; i++) {
-      graph->matrix[i] = (int *)malloc(N * sizeof(int));
-    }
-    for (int i = 0; i < N; i++) {
-      for (int j = 0; j < N; j++) {
-        graph->matrix[i][j] = -1; // Reset matrix
-      }
+  GRAPH *graph = (GRAPH *) malloc(sizeof(GRAPH));
+  if (graph == NULL) return NULL;
+  
+  graph->num_vertex = N;
+
+  // Alloc matrix
+  graph->matrix = (int **) malloc(N * sizeof(int *));
+  for (int i = 0; i < N; i++) {
+    graph->matrix[i] = (int *)malloc(N * sizeof(int));
+  }
+
+ // Reset matrix 
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+      graph->matrix[i][j] = -1; 
     }
   }
+
   return graph;
 }
 
