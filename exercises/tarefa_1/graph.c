@@ -77,6 +77,18 @@ int **adjacency_matrix(GRAPH *G) {
   return G->matrix;
 }
 
+bool remove_graph(Graph G) {
+  if (G == NULL) return false;
+
+  for (int line = 0; line < G->num_vertex; line++){
+    if (G->matrix[line] != NULL) free(G->matrix[line]);
+  }
+  free(G->matrix);
+  free(G);
+
+  return true;
+}
+
 bool add_edge(Graph G, int v1, int v2, int weight) {
   if (G == NULL) {
     return false;

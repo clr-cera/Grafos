@@ -16,7 +16,7 @@ bool remove_edge(Graph G, int v1, int v2);
 bool print_info(Graph G);
 // f
 int number_of_vertexs(Graph G);
-// g TODO
+// g
 bool remove_graph(Graph G);
 // h
 bool add_edge(Graph G, int v1, int v2, int weight);
