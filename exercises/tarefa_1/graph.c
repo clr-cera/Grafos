@@ -122,3 +122,30 @@ int *get_adj_vertex(Graph G, int v) {
   arr = realloc(arr, arr_size + 1);
   return arr;
 }
+
+int remove_with_least_weight(Graph G){
+  int menor = -1, n;
+  //percorre a matriz para achar o menor peso
+  for(int i = 0;i<G->num_vertex;i++){
+    for(int j = 0;j<i+1;j++){
+      n = G->matrix[i][j];
+      if(menor == -1 ||(n < menor && n != -1)){
+        menor = n;
+      }
+    }
+  }
+  if(menor!=-1){
+    //remove todas as arestas com peso igual ao menor
+    for(int i = 0;i<G->num_vertex;i++){
+      for(int j = 0;j<i+1;j++){
+        n = G->matrix[i][j];
+        if((n == menor)){
+          G->matrix[i][j] = -1;
+          G->matrix[j][i] = -1;
+        }
+      }
+    }  
+    
+  }
+  return menor;
+}

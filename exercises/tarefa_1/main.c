@@ -7,7 +7,7 @@ int main(void) {
   printf("z : Parar programa\na : Criar Grafo\nb : Checar existência de aresta\nc : "
          "Pegar vértices adjacentes\nd : Remover aresta\ne : Imprimir grafo\nf : Pegar "
          "número de vértices\ng : Remover grafo\nh : Adicionar aresta\ni : Remover "
-         "aresta com menor peso\nj : Pegar matriz de adjacência");
+         "aresta com menor peso\nj : Pegar matriz de adjacência\n");
 
   // Variáveis
   char op;
