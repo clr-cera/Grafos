@@ -14,13 +14,13 @@ GRAPH *MyGraph(int N) {
   
   graph->num_vertex = N;
 
-  // Alloc matrix
+  // Aloca matrix
   graph->matrix = (int **) malloc(N * sizeof(int *));
   for (int i = 0; i < N; i++) {
     graph->matrix[i] = (int *)malloc(N * sizeof(int));
   }
 
- // Reset matrix 
+ // Reseta matrix 
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
       graph->matrix[i][j] = -1; 
@@ -76,12 +76,13 @@ bool add_edge(Graph G, int v1, int v2, int weight) {
   return true;
 }
 
-// Return an array of vertices that have adj edge with vertex v
+// Retorna vetor de vertices que tem adjacência com vertice v
 int *get_adj_vertex(Graph G, int v) {
   if (G == NULL) {
     return NULL;
   }
-  int *arr = (int *)malloc((G->num_vertex + 1) * sizeof(int));
+
+  int *arr = (int *) malloc((G->num_vertex + 1) * sizeof(int));
   int arr_size = 0;
   for (int i = 0; i < G->num_vertex; i++) {
     if (G->matrix[v][i] != -1) {
@@ -89,7 +90,8 @@ int *get_adj_vertex(Graph G, int v) {
       arr_size++;
     }
   }
-  arr[arr_size] = -1; // To indicate the end of the array
+  // Para indicar fim do array
+  arr[arr_size] = -1; 
   arr = realloc(arr, arr_size + 1);
   return arr;
 }

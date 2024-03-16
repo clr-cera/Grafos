@@ -3,20 +3,20 @@
 
 int main(void) {
 
-  // Instructions to usage
+  // Instruções
   printf("z : Stop program\na : Create graph\nb : Check edge existence\nc : "
          "Get adjcent vertices\nd : Remove edge\ne : Print graph\nf : Get "
          "number of vertices\ng : Remove graph\nh : Add edge\ni : Remove "
          "lightest edge\nj : Get adjacency matrix");
 
-  // Variables
+  // Variáveis
   char op;
   int n, v1, v2, num_vertex, weight;
   int *array;
   int **matrix;
   Graph graph;
 
-  // Options menu
+  // Parser de Instruções
   do {
     scanf("%c", &op);
   } while (op != 'z');
