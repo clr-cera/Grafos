@@ -57,13 +57,41 @@ bool print_info(GRAPH *G) {
   if (G == NULL) {
     return false;
   }
+
+  printf("  |");
+  for(int i = 0; i < G->num_vertex; i++){
+    printf("%3d |", i);
+  }printf("\n");
+
+  for(int i = 0; i < G->num_vertex*5 + 5; i++){
+    if ((i+3)%5 == 0)
+      printf("+");
+    else
+      printf("-");
+  }printf("\n");
+
   for (int i = 0; i < G->num_vertex; i++) {
-    printf("| ");
-    for (int j = 0; j < G->num_vertex; j++) {
-      printf(" % 3d ", G->matrix[i][j]);
-    }
-    printf(" |\n");
+    printf("%d ", i);
+    for (int j = 0; j < G->num_vertex*2 + 1; j++) {
+      if (j % 2 == 0)
+        printf("|");
+      else
+        printf(" %3d", G->matrix[i][j/2]);
+    }printf(" %d\n", i);
   }
+  
+  for(int i = 0; i < G->num_vertex*5 + 5; i++){
+    if ((i+3)%5 == 0)
+      printf("+");
+    else
+      printf("-");
+  }printf("\n");
+  
+  printf("  |");
+  for(int i = 0; i < G->num_vertex; i++){
+    printf("%3d |", i);
+  }printf("\n");
+
   return true;
 }
 
