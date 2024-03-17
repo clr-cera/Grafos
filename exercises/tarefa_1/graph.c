@@ -37,17 +37,15 @@ GRAPH *MyGraph(int N) {
 }
 
 bool exist_edge(GRAPH *G, int v1, int v2) {
-  if (G == NULL) {
+  if (G == NULL || v1 < 0 || v1 >= G->num_vertex ||v2 < 0 || v2 >= G->num_vertex ) {
     return false;
   }
-  if ((v1 > G->num_vertex) || (v1 < 0) || (v2 > G->num_vertex)  || (v2 < 0)) {
-    return false;
-  }
+
   return (G->matrix[v1][v2] != -1);
 }
 
 bool remove_edge(Graph G, int v1, int v2) {
-  if (G == NULL) {
+  if (G == NULL || v1 < 0 || v1 >= G->num_vertex ||v2 < 0 || v2 >= G->num_vertex ) {
     return false;
   }
   
@@ -96,7 +94,7 @@ bool remove_graph(Graph G) {
 }
 
 bool add_edge(Graph G, int v1, int v2, int weight) {
-  if (G == NULL) {
+  if (G == NULL || v1 < 0 || v1 >= G->num_vertex ||v2 < 0 || v2 >= G->num_vertex ) {
     return false;
   }
   G->matrix[v1][v2] = G->matrix[v2][v1] = weight;
@@ -105,7 +103,7 @@ bool add_edge(Graph G, int v1, int v2, int weight) {
 
 // Retorna vetor de vertices que tem adjacência com vertice v
 int *get_adj_vertex(Graph G, int v) {
-  if (G == NULL) {
+  if (G == NULL || v < 0 || v >= G->num_vertex) {
     return NULL;
   }
 
@@ -124,6 +122,8 @@ int *get_adj_vertex(Graph G, int v) {
 }
 
 int remove_with_least_weight(Graph G){
+  if (G == NULL) return -2;
+
   int menor = -1, n;
   //percorre a matriz para achar o menor peso
   for(int i = 0;i<G->num_vertex;i++){
@@ -139,7 +139,7 @@ int remove_with_least_weight(Graph G){
     for(int i = 0;i<G->num_vertex;i++){
       for(int j = 0;j<i+1;j++){
         n = G->matrix[i][j];
-        if((n == menor)){
+        if(n == menor){
           G->matrix[i][j] = -1;
           G->matrix[j][i] = -1;
         }

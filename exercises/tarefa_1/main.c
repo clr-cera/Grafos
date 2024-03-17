@@ -37,7 +37,7 @@ int main(void) {
         if (exist_edge(graph, v1, v2)) {
           printf("Existe aresta.\n");
         } else {
-          printf("Não existe aresta.\n");
+          printf("Houve um problema.\n");
         }
         break;
       }
@@ -58,7 +58,7 @@ int main(void) {
         if (remove_edge(graph, v1, v2)) {
           printf("Remoção concluída.\n");
         } else {
-          printf("O vértice não existia\n");
+          printf("Houve um problema.\n");
         }
         break;
       }
@@ -80,21 +80,32 @@ int main(void) {
         }
       }
       case 'h': {
+        printf("Digite os vertices a serem conectados e o peso da conexão, com espaços entre os dados: ");
         scanf("%d %d %d", &v1, &v2, &weight);
         if (add_edge(graph, v1, v2, weight)) {
           printf("Adicionou aresta.\n");
         } else {
-          printf("Grafo não existe.\n");
+          printf("Houve um problema.\n");
         }
         break;
       }
-      case 'i':
-        printf("A aresta com menor peso %d foi removida.\n",
-               remove_with_least_weight(graph));
+      case 'i': {
+        int returnal = remove_with_least_weight(graph);
+        if (returnal == -2) printf("Não há grafo\n");
+        else if (returnal == -1) printf("Não há arestas\n");
+        else printf("A aresta com menor peso %d foi removida.\n", returnal);
         break;
-      case 'j':
+      }
+      case 'j': {
         matrix = adjacency_matrix(graph);
+        for (int i = 0; i < number_of_vertexs(graph); i++){
+          for (int j = 0; j < number_of_vertexs(graph); j++)
+            printf("%d ",matrix[i][j]);
+          printf("\n");
+        }
+        
         break;
+      }
       default:
         break;
     }
