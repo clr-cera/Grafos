@@ -37,7 +37,7 @@ int main(void) {
         if (exist_edge(graph, v1, v2)) {
           printf("Existe aresta.\n");
         } else {
-          printf("Houve um problema.\n");
+          printf("Não existe aresta ou houve um problema.\n");
         }
         break;
       }
@@ -48,7 +48,8 @@ int main(void) {
         array = get_adj_vertex(graph, v1);
         for (int i = 0; array[i] != -1; i++) {
           printf("%d ", array[i]);
-        }
+        }printf("\n");
+
         break;
       }
 
@@ -68,7 +69,7 @@ int main(void) {
       }
       case 'f': {
         num_vertex = number_of_vertexs(graph);
-        printf("%d", num_vertex);
+        printf("%d\n", num_vertex);
         break;
       }
       case 'g': {
