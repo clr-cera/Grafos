@@ -77,8 +77,8 @@ int main(void) {
           printf("Grafo foi removido.\n");
         } else {
           printf("Grafo não existia.\n");
-          break;
         }
+        break;
       }
       case 'h': {
         printf("Digite os vertices a serem conectados e o peso da conexão, com espaços entre os dados: ");
