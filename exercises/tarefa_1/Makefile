@@ -18,4 +18,4 @@ test:
 	./main.out < ./tests/caso1.in
 	
 zip:
-	zip -R grafo.zip . '*.c' '*.h' 'Makefile' '*.in' '.txt'
+	zip -R grafo.zip . '*.c' '*.h' 'Makefile' '*.in' '*.txt'
