@@ -25,14 +25,14 @@ int main(void) {
         break;
 
       case 'a': {
-        printf("Digite o número de vértices: ");
+        printf("Digite o número de vértices:\n");
         scanf("%d", &n);
         graph = MyGraph(n);
         break;
       }
 
       case 'b': {
-        printf("Digite os vértices da aresta, com um espaço os separando: ");
+        printf("Digite os vértices da aresta, com um espaço os separando:\n");
         scanf("%d %d", &v1, &v2);
         if (exist_edge(graph, v1, v2)) {
           printf("Existe aresta.\n");
@@ -43,9 +43,11 @@ int main(void) {
       }
 
       case 'c': {
-        printf("Digite o vértice: ");
+        printf("Digite o vértice:\n");
         scanf("%d", &v1);
         array = get_adj_vertex(graph, v1);
+        if (array == NULL) break;
+        
         for (int i = 0; array[i] != -1; i++) {
           printf("%d ", array[i]);
         }printf("\n");
@@ -54,7 +56,7 @@ int main(void) {
       }
 
       case 'd': {
-        printf("Digite vértices da aresta a ser removida, com um espaço os separando: ");
+        printf("Digite vértices da aresta a ser removida, com um espaço os separando:\n");
         scanf("%d %d", &v1, &v2);
         if (remove_edge(graph, v1, v2)) {
           printf("Remoção concluída.\n");
@@ -81,7 +83,7 @@ int main(void) {
         break;
       }
       case 'h': {
-        printf("Digite os vertices a serem conectados e o peso da conexão, com espaços entre os dados: ");
+        printf("Digite os vertices a serem conectados e o peso da conexão, com espaços entre os dados:\n");
         scanf("%d %d %d", &v1, &v2, &weight);
         if (add_edge(graph, v1, v2, weight)) {
           printf("Adicionou aresta.\n");
