@@ -1,6 +1,8 @@
 //Arthur Ernesto de Carvalho - 14559479
 //Eduarda Tuboy Nardin nUSP: 13732495
 //Rafael Brazolin Alves Mansur - 14604020
+//Juan Marques Jordão - 14758742
+//Augusto Cavalcante Barbosa Pereira - 14651531
 
 #include "graph.h"
 #include "stdio.h"
