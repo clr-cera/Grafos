@@ -6,6 +6,7 @@ TAD Grafos com Matriz de Adjacência
 Arthur Ernesto de Carvalho - 14559479
 Eduarda Tuboy Nardin nUSP: 13732495
 Rafael Brazolin Alves Mansur - 14604020
+Juan Marques Jordão - 14758742
 
 # Instruções para o compilar e testar o programa:
 
