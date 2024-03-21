@@ -126,9 +126,10 @@ bool remove_graph(Graph *G) {
     return false;
 
   for (int line = 0; line < (*G)->num_vertex; line++) {
-    if ((*G)->matrix[line] != NULL)
+    if ((*G)->matrix[line] != NULL) {
       free((*G)->matrix[line]);
-    (*G)->matrix[line] = NULL;
+      (*G)->matrix[line] = NULL;
+    }
   }
   free((*G)->matrix);
   free((*G));
