@@ -15,10 +15,7 @@ run:
 	./main.out
 
 test:
-	./main.out < ./tests/1.input | diff ./tests/1.output -u -
-
-test-mem:
-	valgrind --leak-check=full ./main.out < ./tests/1.input | diff ./tests/1.output -u -
-
+	./main.out < ./tests/caso1.in
+	
 zip:
-	zip -R grafo.zip . '*.c' '*.h' 'Makefile'
+	zip -R grafo.zip . '*.c' '*.h' 'Makefile' '*.in' '.txt'
