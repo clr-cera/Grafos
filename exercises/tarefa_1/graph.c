@@ -26,7 +26,7 @@ GRAPH *MyGraph(int N) {
   for (int i = 0; i < N; i++) {
     graph->matrix[i] = (int *)malloc(N * sizeof(int));
     if (graph->matrix[i] == NULL) {
-      remove_graph(graph);
+      remove_graph(&graph);
       return NULL;
     }
   }
