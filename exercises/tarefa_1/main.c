@@ -17,9 +17,9 @@ int main(void) {
   Graph graph;
 
   // Parser de Instruções
-  do {
-    scanf("%c", &op);
+  scanf("%c", &op);
 
+  do {
     switch (op) {
       case 'z':
         break;
@@ -110,6 +110,6 @@ int main(void) {
       default:
         break;
     }
-  } while (op != 'z');
+  } while ((scanf(" %c", &op)) != EOF||op != 'z');
   return 0;
 }
